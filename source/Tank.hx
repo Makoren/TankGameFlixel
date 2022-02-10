@@ -9,7 +9,8 @@ class Tank extends FlxTypedGroup<FlxSprite> {
 	public var x:Float;
 	public var y:Float;
 
-	var tankBase:FlxSprite;
+	public var tankBase(default, null):FlxSprite;
+
 	var tankCannon:FlxSprite;
 
 	public function new() {
@@ -29,5 +30,10 @@ class Tank extends FlxTypedGroup<FlxSprite> {
 		tankCannon.setPosition(x + (tankBase.width / 2) - (tankCannon.height / 2), y + (tankBase.height / 2) - (tankCannon.height / 2));
 		tankCannon.angle += 1;
 		super.update(elapsed);
+	}
+
+	public function setPosition(x:Float = 0, y:Float = 0) {
+		this.x = x;
+		this.y = y;
 	}
 }
