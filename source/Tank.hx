@@ -3,6 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.math.FlxAngle;
 import flixel.util.FlxColor;
 
 class Tank extends FlxTypedGroup<FlxSprite> {
@@ -28,7 +29,9 @@ class Tank extends FlxTypedGroup<FlxSprite> {
 	override public function update(elapsed:Float):Void {
 		tankBase.setPosition(x, y);
 		tankCannon.setPosition(x + (tankBase.width / 2) - (tankCannon.height / 2), y + (tankBase.height / 2) - (tankCannon.height / 2));
-		tankCannon.angle += 1;
+
+		tankCannon.angle = FlxAngle.angleBetweenMouse(tankCannon, true);
+
 		super.update(elapsed);
 	}
 
