@@ -15,9 +15,9 @@ class Tank extends FlxTypedGroup<FlxSprite> {
 
 	public function new() {
 		super();
-		tankBase = new FlxSprite().makeGraphic(48, 48, FlxColor.BLUE);
+		tankBase = new FlxSprite().loadGraphic(AssetPaths.tankbase__png);
+		tankCannon = new FlxSprite().loadGraphic(AssetPaths.tankcannon__png);
 
-		tankCannon = new FlxSprite().makeGraphic(48, 16, FlxColor.CYAN);
 		tankCannon.origin.x = tankCannon.origin.x - (tankCannon.width / 2) + (tankCannon.height / 2);
 		tankCannon.allowCollisions = NONE;
 
